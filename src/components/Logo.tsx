@@ -86,16 +86,13 @@ export function Logomark(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-// CHANGE_ME: this is a plain text wordmark placeholder. Replace with your
-// own SVG logo (see Logomark above for the pattern), or keep this and just
-// change the text.
 export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="220"
+      width="260"
       height="40"
-      viewBox="0 0 220 40"
+      viewBox="0 0 260 40"
       {...props}
     >
       <text
@@ -103,10 +100,10 @@ export function Logo(props: React.ComponentPropsWithoutRef<'svg'>) {
         y="28"
         fontFamily="var(--font-lexend), sans-serif"
         fontWeight="700"
-        fontSize="28"
+        fontSize="22"
         fill="currentColor"
       >
-        YOUR_APP_NAME
+        clash-of-clans-data
       </text>
     </svg>
   )

@@ -1,6 +1,6 @@
 {
-  "name": "YOUR_APP_NAME",
-  "short_name": "YOUR_APP",
+  "name": "clash-of-clans-data",
+  "short_name": "coc-data",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

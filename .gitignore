@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 CLAUDE.md
+AGENTS.md
 .claude/
 memory/
 

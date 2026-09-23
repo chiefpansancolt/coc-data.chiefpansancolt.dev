@@ -2,25 +2,21 @@
 title: Getting Started
 nextjs:
   metadata:
-    title: YOUR_APP_NAME - Getting Started
-    description: Getting started with using YOUR_APP_NAME.
+    title: clash-of-clans-data - Getting Started
+    description: Getting started with clash-of-clans-data, a fully-typed Node.js package containing all Clash of Clans game data.
 ---
 
-<!-- CHANGE_ME: rewrite this whole page for your project. The structure
-     below (quick-links, a Quick start section, Resources, Getting help)
-     is a starting scaffold, not fixed content. -->
-
-Learn how to get YOUR_APP_NAME set up.
+Documentation for the clash-of-clans-data npm package: a comprehensive, fully-typed dataset for Clash of Clans with structured JSON data, bundled image assets, and a chainable query API for Home Village, Builder Base, and Clan Capital. {% .lead %}
 
 {% quick-links %}
 
-{% quick-link title="Installation" icon="installation" href="/docs/installation" description="Step-by-step guides to setting up your system and installing the library." /%}
+{% quick-link title="Installation" icon="installation" href="/docs/installation" description="Install the package and start querying Clash of Clans data in your project." /%}
 
-{% quick-link title="Usage" icon="presets" href="/docs/usage" description="Understand how to use it in your project." /%}
+{% quick-link title="Core concepts" icon="presets" href="/docs/core-concepts" description="Learn the factory function and query builder pattern shared by every namespace." /%}
 
-{% quick-link title="Contributing" icon="plugins" href="/docs/how-to-contribute" description="Learn how to contribute to the project." /%}
+{% quick-link title="Query builder" icon="plugins" href="/docs/query-builder" description="Filter and look up defenses, troops, heroes, and more with chainable methods." /%}
 
-{% quick-link title="Roadmap" icon="theming" href="https://github.com/users/YOUR_GITHUB_USERNAME/projects/1" description="See what is planned or being worked on." /%}
+{% quick-link title="TypeScript" icon="theming" href="/docs/typescript" description="Full TypeScript support with typed exports for every base and entity." /%}
 
 {% /quick-links %}
 
@@ -28,41 +24,71 @@ Learn how to get YOUR_APP_NAME set up.
 
 ## Quick start
 
-YOUR_APP_NAME is a CHANGE_ME_ONE_LINE_DESCRIPTION.
+### Install the package
 
-### Features
+```shell
+npm install clash-of-clans-data
+```
 
-- CHANGE_ME: list your project's key features here
+### Import and query data
+
+```typescript
+import { builder, clan, clanCapital, home } from 'clash-of-clans-data'
+
+// Home Village: single building
+const cannon = home().defenses().cannon().first()!
+console.log(cannon.name) // "Cannon"
+console.log(cannon.levels.length) // number of upgrade levels
+
+// Home Village: category queries
+const splashDefenses = home().defenses().byDamageType('splash').get()
+const th12Defenses = home().defenses().byTownHall(12).get()
+
+// Builder Base
+const bCannon = builder().defenses().cannon().first()!
+
+// Clan Capital
+const superBarbarian = clanCapital().troops().superBarbarian().first()!
+
+// Clan
+const level10 = clan().levels().atLevel(10)!
+console.log(level10.perks.donationUpgradeLevels) // 2
+```
 
 ---
 
-## Resources
+## What's included
 
-### License
+The package provides fully-typed data and query builders for every base in the game:
 
-YOUR_APP_NAME is available as open source under the terms of the [MIT License](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO/blob/main/LICENSE).
+- **Home Village**: Defenses, crafted defenses, traps, walls, troops, spells, siege machines, heroes, hero equipment, pets, guardians, resource buildings, army buildings, other buildings, and the Town Hall
+- **Builder Base**: Defenses, traps, walls, troops, heroes, resource buildings, army buildings, the Builder Hall, and Builder Base leagues
+- **Clan Capital**: Defenses, traps, walls, troops, spells, army buildings, other buildings, the Capital Hall, District Halls, the Forge, and Clan Capital leagues
+- **Clan**: Clan levels and perks, clan labels, and war data (max base loot, war bonus tiers, max base ore)
+- **Calculators**: Gem cost, Builder/Research Boost, potions & snacks, Clock Tower, and Helper Hut helpers
+- **Magic items**: Books, hammers, potions, snacks, and utility items
+- **Season pass, ranked battles & achievements**: Season pass challenges, ranked battle leagues, and in-game achievements
 
-### Change Log
+---
 
-See the [change log](/docs/change-log) for release history.
+## Data source
+
+All game data is sourced from the [Clash of Clans Wiki](https://clashofclans.fandom.com/wiki/) and kept up-to-date with each game update.
 
 ---
 
 ## Getting help
 
-There are many ways to get assistance via Issues, Discussions, and Pull Requests.
+### Submit an issue
+
+Found a bug or have a feature request? Open an issue on the [GitHub repository](https://github.com/chiefpansancolt/clash-of-clans-data/issues).
+
+### View on GitHub
+
+Check out the source code at [github.com/chiefpansancolt/clash-of-clans-data](https://github.com/chiefpansancolt/clash-of-clans-data).
 
 ### Contributing
 
-Bug reports, feature requests, and pull requests are welcome on GitHub at [https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO/blob/main/.github/CODE_OF_CONDUCT.md) code of conduct.
+Bug reports, feature requests, and pull requests are welcome. See [how to contribute](/docs/how-to-contribute) for details.
 
-To see more about contributing check out this [document](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO/blob/main/.github/CONTRIBUTING.md).
-
-- Fork the repo and create a new branch
-- Once everything is changed and committed, create a pull request
-
-**Ensure all merge conflicts are fixed and CI is passing.**
-
-### Join the community
-
-Join the community by posting in our [discussions](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO/discussions) on GitHub.
+This project is not affiliated with, endorsed, or sponsored by Supercell. Clash of Clans is a trademark of Supercell.

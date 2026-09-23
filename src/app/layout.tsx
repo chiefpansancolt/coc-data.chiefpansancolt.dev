@@ -21,22 +21,27 @@ const lexend = localFont({
   variable: '--font-lexend',
 })
 
-// CHANGE_ME: siteUrl must match SITE_URL in src/app/robots.ts and
-// src/app/sitemap.ts — a mismatch between these was a real bug found
-// across several sites cloned from this template's sibling repos.
-const siteUrl = 'https://YOUR_APP_NAME.example.com'
+// siteUrl must match SITE_URL in src/app/robots.ts and src/app/sitemap.ts.
+// A mismatch between these was a real bug found across several sites cloned
+// from this template's sibling repos.
+const siteUrl = 'https://coc-data.chiefpansancolt.dev'
 const siteDescription =
-  'Getting started with using YOUR_APP_NAME in YOUR_CONTEXT.'
+  'Getting started with using clash-of-clans-data, a fully-typed Node.js package containing all Clash of Clans game data.'
 
-// CHANGE_ME: update name/description/keywords for your project throughout
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     template: '%s - Docs',
-    default: 'YOUR_APP_NAME',
+    default: 'clash-of-clans-data',
   },
   description: siteDescription,
-  keywords: ['YOUR_APP_NAME', 'YOUR_KEYWORD'],
+  keywords: [
+    'clash-of-clans-data',
+    'clash of clans',
+    'clash of clans api',
+    'clash of clans json',
+    'clash of clans typescript',
+  ],
   alternates: {
     canonical: '/',
   },
@@ -46,14 +51,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    siteName: 'YOUR_APP_NAME',
-    title: 'YOUR_APP_NAME',
+    siteName: 'clash-of-clans-data',
+    title: 'clash-of-clans-data',
     description: siteDescription,
     url: siteUrl,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'YOUR_APP_NAME',
+    title: 'clash-of-clans-data',
     description: siteDescription,
   },
   icons: {
@@ -66,16 +71,13 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 }
 
-// CHANGE_ME: update name/codeRepository/programmingLanguage, or delete this
-// block and the <script> below entirely if the docs aren't for an open
-// source project.
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareSourceCode',
-  name: 'YOUR_APP_NAME',
+  name: 'clash-of-clans-data',
   description: siteDescription,
-  codeRepository: 'https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO',
-  programmingLanguage: 'YOUR_LANGUAGE',
+  codeRepository: 'https://github.com/chiefpansancolt/clash-of-clans-data',
+  programmingLanguage: 'TypeScript',
 }
 
 export default function RootLayout({

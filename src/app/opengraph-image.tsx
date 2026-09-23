@@ -1,7 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-// CHANGE_ME: alt text and the two text strings below
-export const alt = 'YOUR_APP_NAME Docs'
+export const alt = 'clash-of-clans-data Docs'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -37,7 +36,7 @@ const Image = () =>
           marginBottom: 20,
         }}
       >
-        YOUR_APP_NAME
+        clash-of-clans-data
       </div>
       <div
         style={{
@@ -46,7 +45,7 @@ const Image = () =>
           fontWeight: 400,
         }}
       >
-        Getting started with YOUR_APP_NAME
+        Getting started with clash-of-clans-data
       </div>
     </div>,
     { ...size },
