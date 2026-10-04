@@ -10,7 +10,14 @@ This page summarizes recent releases. See the full [CHANGELOG.md](https://github
 
 ---
 
-## Version [0.18.0](https://github.com/chiefpansancolt/clash-of-clans-data/releases/tag/0.18.0)
+## Version [0.18.1](https://github.com/chiefpansancolt/clash-of-clans-data/releases/tag/v0.18.1)
+
+### Fixed
+
+Thrower stats now match the current game data: movement speed is 16, level 3 has 2500 hitpoints and
+220 DPS, and level 4 has 2650 hitpoints and 230 DPS.
+
+## Version [0.18.0](https://github.com/chiefpansancolt/clash-of-clans-data/releases/tag/v0.18.0)
 
 ### Added
 
@@ -24,7 +31,7 @@ Build, upgrade, and research time reductions applied across defenses, traps, arm
 resource buildings, troops, spells, and heroes. Phase 3 crafted defenses (Roaster, Air Bombs, Lava
 Launcher) are now marked as former (`isCurrent: false`).
 
-## Version [0.17.0](https://github.com/chiefpansancolt/clash-of-clans-data/releases/tag/0.17.0)
+## Version [0.17.0](https://github.com/chiefpansancolt/clash-of-clans-data/releases/tag/v0.17.0)
 
 ### Added
 
